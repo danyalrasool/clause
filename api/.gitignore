@@ -1,7 +1,5 @@
 # Python cache
 
-api/evals/
-
 __pycache__/
 *.py[cod]
 

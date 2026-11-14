@@ -1,6 +1,5 @@
 notebooks/
 
-api/evals/
 api/vector_store/.lock
 
 # Python cache

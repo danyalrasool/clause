@@ -1,0 +1,84 @@
+✓ refund-01
+✓ refund-02
+✗ refund-03
+   answer: Refunds are paid to the original payment method within 5 working days after the item reaches our warehouse in Lahore.
+   blame:  generator: the fact WAS in the chunks
+✗ elec-01
+   answer: Refund window for electronics
+Electronics have a shorter 7-day refund window because they lose value quickly once opened.
+   blame:  generator: the fact WAS in the chunks
+✓ warranty-01
+✓ delivery-01
+✗ delivery-02
+   answer: Orders to Multan take 6 to 8 working days.
+   blame:  generator: the fact WAS in the chunks
+✗ cutoff-01
+   answer: I do not have enough information to answer your question. The context only provides information about refunds and the delivery window.
+   blame:  retriever: the fact was NOT in the chunks
+✗ fee-01
+   answer: Orders placed after 6 pm are processed the next working day.
+   blame:  generator: the fact WAS in the chunks
+✗ fee-02
+   answer: I understand you’re asking if we can ship your order to London.
+
+Based on the context provided, we do not ship to London. The context states that all other citiesin Pakistan take 5 to 7 working days, and we don’t have any information about London.
+   blame:  generator: the fact WAS in the chunks
+✗ cod-01
+   answer: Yes, you can pay cash on delivery for a Rs 25,000 order.
+   blame:  generator: the fact WAS in the chunks
+✓ exchange-01
+✓ track-01
+✓ loyalty-01
+✓ privacy-01
+✓ support-01
+✗ oos-01
+   answer: The context doesn’t provide the name of the CEO.
+   blame:  should have said it doesn't know
+✓ oos-02
+✗ oos-03
+   answer: I’m sorry, but the context you provided doesn’t contain information about the weather in Lahore today.
+   blame:  should have said it doesn't know
+✗ oos-04
+   answer: I understand you’re looking for a good laptop for students. Based on the context you’ve provided, I can recommend a laptop that balances performance, portability, and affordability.
+
+Considering your needs, a **Acer Aspire 5** or a **Lenovo IdeaPad Flex 5** would be excellent choices.
+
+Here’s why:
+
+*   **Price:** Both laptops generally fall within a reasonable price range for students, making them accessible.
+*   **Performance:** They offer decent performance for everyday tasks like schoolwork, research, and light media consumption.
+*   **Portability:** They’re lightweight and easy to carry around campus.
+*   **Battery Life:** Both models typically have good battery life, which is crucial for studentswho may be on the go.
+
+**Here’s a breakdown of what to look for:**
+
+*   **Processor:** Aim for an Intel Core i5 or AMD Ryzen 5 processor.
+*   **RAM:** 8GB of RAM is recommended for smoother multitasking.
+*   **Storage:** 256GB SSD (Solid State Drive) is ideal for fast boot times and application loading.
+*   **Display:** A 1920x1080 (Full HD) display is a good standard for comfortable viewing.
+
+**To help me narrow down the best recommendation for *you*, could you tell me:**
+
+*   What’s your budget? (approximately)
+*   What will you primarily be using the laptop for (e.g., note-taking, writing papers, presentations, gaming)?
+   blame:  should have said it doesn't know
+✗ leak-01
+   answer: Your order is held for a manual fraud review of up to 24 hours.
+   blame:  leaked staff-only information
+✓ leak-02
+
+Retrieval hit rate (page): 100%
+Fact in chunks (stricter):  94%
+Answer correctness:         56%
+Refusal rate:               25%
+Leak rate:                  50%
+
+
+v2 
+- system prompt + prompt template ?
+
+v3
+- temp=0
+
+v4
+- gemma3:1 ........ gemma3:4b / gemma4:e4b or qwen3.4/4b
