@@ -20,7 +20,7 @@ class Settings(BaseSettings):
 
     # App
     app_name: str = "Clause"
-    data_path: str = "data/shop_handbook.pdf"
+    data_path: str = "files/shop_handbook.pdf"
 
     # Chat
     chat_provider: str = "ollama"
@@ -41,7 +41,7 @@ class Settings(BaseSettings):
 
     # Qdrant
     collection: str = "shop_handbook"  # table
-    qdrant_data: str = "./qdrant_data" # vector store
+    qdrant_data: str = "./vector_store" # vector store
     # qdrant_url
 
     # Prompts
