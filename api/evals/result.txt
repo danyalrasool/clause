@@ -81,4 +81,22 @@ v3
 - temp=0
 
 v4
-- gemma3:1 ........ gemma3:4b / gemma4:e4b or qwen3.4/4b
+- gemma3:1 ........ gemma3:4b / gemma4:e4b or qwen3.5:4b or
+
+Hit = ?
+Correct = ?
+Refusal = ?
+Leak = ?
+
+v5 
+-top_k = 2 (opetional)
+
+v6
+
+
+v7 ---
+dataset 50 test cases (add customer complex question like trick,)
+
+golden_v2.josnl
+
+--final

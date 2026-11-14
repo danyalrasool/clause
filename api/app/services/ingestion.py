@@ -1,6 +1,6 @@
 # Ingestion---? Perform Just One Time -- Rerun only when any change in document
 # 1. load- Loading Document (.doc,.pdf,.csv,.sql,.html) 2. chunks 3. Embed 4. Store
-
+import re
 from pathlib import Path
 
 # from pypdf import PdfReader
@@ -11,6 +11,19 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from qdrant_client.models import Distance, VectorParams
 
 from app.core.config import get_embeddings, get_qdrant_client, get_settings
+
+
+STAFF_ONLY = re.compile(r"\n?\d+\.[^\n]*\(staff only\).*?(?=\n\d+\. |\Z)", re.S)
+
+# def load(path: Path) -> list[Document]:
+#     return PyPDFLoader(path).load()
+
+def load(path: Path) -> list[Document]:
+    docs = PyPDFLoader(path).load()
+    for doc in docs:
+        doc.page_content = STAFF_ONLY.sub("", doc.page_content)
+    return docs
+
 
 
 def load(path: Path) -> list[Document]:     # Return List Of Documents # Langchain Class "Documents"->its attributes-> Page_content,Meta_Data,id
