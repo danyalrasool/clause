@@ -24,14 +24,14 @@ class RAGService():
         self.settings = get_settings()  # Instance attribute - / Composition
         self.client = get_qdrant_client(self.settings)
 
-        if not self.client.collection_exists(self.settings.collection):
-            raise RuntimeError(f"Collection {self.settings.collection} not found.")
+        if not self.client.collection_exists(self.settings.collection_name):
+            raise RuntimeError(f"Collection {self.settings.collection_name} not found.")
 
         self.store = QdrantVectorStore(
             client=self.client,
-            collection_name=self.settings.collection,
+            collection_name=self.settings.collection_name,
             embedding=get_embeddings(self.settings)
-        )
+)
 
         self.llm = init_chat_model(
             model=self.settings.chat_model,
